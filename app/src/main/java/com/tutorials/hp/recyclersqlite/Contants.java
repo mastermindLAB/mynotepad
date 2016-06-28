@@ -15,7 +15,7 @@ public class Contants {
     static final int DB_VERSION='1';
 
 
-//CREATE TABLE
+//CREATE TABLE STATEMENTS
     static final String CREATE_TB="CREATE TABLE b_TB(id INTEGER PRIMARY KEY AUTOINCREMENT,"
             + "name TEXT NOT NULL,position TEXT NOT NULL);";
 }
