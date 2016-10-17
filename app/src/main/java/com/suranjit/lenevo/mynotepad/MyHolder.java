@@ -1,4 +1,4 @@
-package com.tutorials.hp.recyclersqlite;
+package com.suranjit.lenevo.mynotepad;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by Hp on 3/17/2016.
+ * Created by su on 10/12/2016.
  */
 public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -19,7 +19,7 @@ public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickLis
         super(itemView);
 
         //ASSIGN
-        img= (ImageView) itemView.findViewById(R.id.playerImage);
+        img= (ImageView) itemView.findViewById(R.id.studentImage);
         nameTxt= (TextView) itemView.findViewById(R.id.nameTxt);
         posTxt= (TextView) itemView.findViewById(R.id.posTxt);
 

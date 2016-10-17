@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.tutorials.hp.recyclersqlite.DetailActivity"
+    tools:context="com.suranjit.lenevo.mynotepad.DetailActivity"
     tools:showIn="@layout/activity_detail">
 
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,42 +24,46 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:weightSum="1">
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="190dp"
-                android:layout_height="275dp"
+                android:layout_width="325dp"
+                android:layout_height="186dp"
                 android:paddingLeft="15dp"
+
                 android:scaleType="fitCenter"
-                android:src="@drawable/yoda"
+                android:src="@drawable/uottawa"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/playerImage" />
-
+                android:layout_below="@+id/studentImage" />
 
 
             <TextView
                 android:id="@+id/profile"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/colorAccent"
-                android:text="PLAYER PROFILE"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/student_profile"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:layout_below="@+id/image"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:textColor="@color/colorPrimary" />
 
             <EditText
                 android:id="@+id/nameEditTxt"
-                android:layout_width="wrap_content"
+                android:layout_width="97dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:paddingLeft="15dp"
+
                 android:hint="Name"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_below="@+id/profile" />
+                android:layout_below="@+id/profile"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textStyle="normal|bold" />
+
             <EditText
                 android:id="@+id/posEditTxt"
                 android:layout_width="wrap_content"
@@ -68,15 +72,16 @@
                 android:layout_below="@+id/nameTxt"
                 android:paddingLeft="15dp"
                 android:layout_marginTop="24dp"
-                android:hint="Position : "
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:hint="Dept"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textStyle="normal|bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:gravity="center_vertical|end"
                 android:orientation="horizontal"
-                android:id="@+id/linear1"
                 android:padding="8dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
@@ -84,25 +89,27 @@
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:height="48dp"
+                    android:layout_height="46dp"
+                    android:height="68dp"
                     android:clickable="true"
                     android:padding="5dp"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="Update"
-                    android:textColor="@color/colorPrimary"
-                    android:id="@+id/updateBtn" />
+                    android:text="@string/update"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:id="@+id/updateBtn"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textStyle="normal|bold" />
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:height="48dp"
+                    android:layout_height="46dp"
+                    android:height="68dp"
                     android:clickable="true"
                     android:padding="5dp"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="Delete"
+                    android:text="@string/delete"
                     android:textColor="@color/colorPrimary"
                     android:id="@+id/deleteBtn" />
 
@@ -111,18 +118,14 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:height="150dp"
                 android:clickable="true"
                 android:padding="5dp"
 
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="The player joined in the year 2006.
-            He has won every trophy imaginable since joining.
-            He works hard for the team and is a good example.
-            "
-                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/this_application_will_keep_your_data_in_its_own_database"
                 android:id="@+id/info"
                 android:layout_below="@+id/posEditTxt"
                 android:layout_alignParentRight="true"

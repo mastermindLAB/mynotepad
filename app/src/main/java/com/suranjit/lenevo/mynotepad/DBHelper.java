@@ -1,4 +1,4 @@
-package com.tutorials.hp.recyclersqlite;
+package com.suranjit.lenevo.mynotepad;
 
 import android.content.Context;
 import android.database.SQLException;
@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by Hp on 3/17/2016.
+ * Created by su on 10/12/2016.
  */
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -25,7 +25,9 @@ public class DBHelper extends SQLiteOpenHelper {
         {
             e.printStackTrace();
         }
-
+        finally {
+            db.close();
+        }
     }
 
     //UPGRADE TB
@@ -33,5 +35,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
        db.execSQL("DROP TABLE IF EXISTS"+Contants.TB_NAME);
         onCreate(db);
+
     }
+
 }

@@ -9,13 +9,42 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.tutorials.hp.recyclersqlite.MainActivity"
+    tools:context="com.suranjit.lenevo.mynotepad.MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <TextView
+        android:text="Welcome to Our App."
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/textView"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimary"
+        tools:text="Welcome to Our App."
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription=""
+        tools:ignore="ContentDescription" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/myRecycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         class="android.support.v7.widget.RecyclerView" />
-    
+
 </RelativeLayout>

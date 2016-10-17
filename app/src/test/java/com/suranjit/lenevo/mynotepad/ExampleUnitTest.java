@@ -1,4 +1,4 @@
-package com.tutorials.hp.recyclersqlite;
+package com.suranjit.lenevo.mynotepad;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.tutorials.hp.recyclersqlite;
+package com.suranjit.lenevo.mynotepad;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,17 +10,17 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 /**
- * Created by Hp on 3/17/2016.
+ * Created by su on 10/12/2016.
  */
 public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     Context c;
-    ArrayList<Player> players;
+    ArrayList<Student> students;
 
-    public MyAdapter(Context ctx,ArrayList<Player> players)
+    public MyAdapter(Context ctx,ArrayList<Student> students)
     {
         //ASSIGN THEM LOCALLY
         this.c=ctx;
-        this.players=players;
+        this.students=students;
     }
 
     @Override
@@ -37,8 +37,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     //BIND DATA TO VIEWS
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
-           holder.posTxt.setText(players.get(position).getPosition());
-           holder.nameTxt.setText(players.get(position).getName());
+           holder.posTxt.setText(students.get(position).getPosition());
+           holder.nameTxt.setText(students.get(position).getName());
 
         //HANDLE ITEMCLICKS
         holder.setItemClickListener(new ItemClickListener() {
@@ -51,9 +51,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
                 Intent i=new Intent(c,DetailActivity.class);
 
                 //LOAD DATA
-                i.putExtra("NAME",players.get(pos).getName());
-                i.putExtra("POSITION",players.get(pos).getPosition());
-                i.putExtra("ID",players.get(pos).getId());
+                i.putExtra("NAME",students.get(pos).getName());
+                i.putExtra("POSITION",students.get(pos).getPosition());
+                i.putExtra("ID",students.get(pos).getId());
 
                 //START ACTIVITY
                 c.startActivity(i);
@@ -65,6 +65,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
 
     @Override
     public int getItemCount() {
-        return players.size();
+        return students.size();
     }
 }

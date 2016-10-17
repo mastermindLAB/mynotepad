@@ -1,11 +1,8 @@
-package com.tutorials.hp.recyclersqlite;
+package com.suranjit.lenevo.mynotepad;
 
 import android.app.Dialog;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,8 +11,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     EditText nameTxt,posTxt;
     RecyclerView rv;
     MyAdapter adapter;
-    ArrayList<Player> players=new ArrayList<>();
+    ArrayList<Student> students=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         rv.setItemAnimator(new DefaultItemAnimator());
 
         //ADAPTER
-        adapter=new MyAdapter(this,players);
+        adapter=new MyAdapter(this,students);
 
         retrieve();
 
@@ -130,10 +125,10 @@ public class MainActivity extends AppCompatActivity {
         //OPEN
         db.openDB();
 
-        players.clear();
+        students.clear();
 
         //SELECT
-        Cursor c=db.getAllPlayers();
+        Cursor c=db.getAllStudents();
 
         //LOOP THRU THE DATA ADDING TO ARRAYLIST
         while (c.moveToNext())
@@ -142,15 +137,15 @@ public class MainActivity extends AppCompatActivity {
             String name=c.getString(1);
             String pos=c.getString(2);
 
-            //CREATE PLAYER
-            Player p=new Player(name,pos,id);
+            //CREATE STUDENTS
+            Student p=new Student(name,pos,id);
 
-            //ADD TO PLAYERS
-            players.add(p);
+            //ADD TO STUDENTS
+            students.add(p);
         }
 
         //SET ADAPTER TO RV
-        if(!(players.size()<1))
+        if(!(students.size()<1))
         {
             rv.setAdapter(adapter);
         }

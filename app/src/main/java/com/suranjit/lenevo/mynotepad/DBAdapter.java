@@ -1,4 +1,4 @@
-package com.tutorials.hp.recyclersqlite;
+package com.suranjit.lenevo.mynotepad;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
- * Created by Hp on 3/17/2016.
+ * Created by su on 10/12/2016.
  */
 public class DBAdapter {
     Context c;
@@ -68,8 +68,8 @@ public class DBAdapter {
         return 0;
     }
 
-    //RETRIEVE ALL PLAYERS
-    public Cursor getAllPlayers()
+    //RETRIEVE ALL STUDENTS
+    public Cursor getAllStudents()
     {
         String[] columns={Contants.ROW_ID,Contants.NAME,Contants.POSITION};
 
@@ -92,7 +92,9 @@ public class DBAdapter {
             e.printStackTrace();
         }
 
-
+        finally {
+            db.close();
+        }
         return 0;
     }
 
@@ -108,7 +110,9 @@ public class DBAdapter {
         {
             e.printStackTrace();
         }
-
+        finally {
+            db.close();
+        }
 
         return 0;
     }

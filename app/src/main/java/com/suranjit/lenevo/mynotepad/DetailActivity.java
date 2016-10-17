@@ -1,19 +1,19 @@
-package com.tutorials.hp.recyclersqlite;
+package com.suranjit.lenevo.mynotepad;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+
+import static android.support.design.widget.Snackbar.*;
 
 public class DetailActivity extends AppCompatActivity {
 
-    ImageView img;
+    //ImageView img;
     EditText nameTxt,posTxt;
     Button updateBtn,deleteBtn;
 
@@ -28,7 +28,7 @@ public class DetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                make(view, "Replace with your own action", LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -79,10 +79,10 @@ public class DetailActivity extends AppCompatActivity {
         {
             nameTxt.setText(newName);
             nameTxt.setText(newPos);
-            Snackbar.make(nameTxt,"Updated Sucesfully",Snackbar.LENGTH_SHORT).show();
+            make(nameTxt,"Updated Sucesfully", LENGTH_SHORT).show();
         }else
         {
-            Snackbar.make(nameTxt,"Unable to Update",Snackbar.LENGTH_SHORT).show();
+            make(nameTxt,"Unable to Update", LENGTH_SHORT).show();
         }
 
         db.close();
@@ -100,7 +100,7 @@ public class DetailActivity extends AppCompatActivity {
             this.finish();
         }else
         {
-            Snackbar.make(nameTxt,"Unable to Update",Snackbar.LENGTH_SHORT).show();
+            make(nameTxt,"Unable to Update", LENGTH_SHORT).show();
         }
 
         db.close();

@@ -1,13 +1,13 @@
-package com.tutorials.hp.recyclersqlite;
+package com.suranjit.lenevo.mynotepad;
 
 /**
- * Created by Hp on 3/17/2016.
+ * Created by su on 10/12/2016.
  */
-public class Player {
+class Student {
     private String name,position;
     private int id;
 
-    public Player(String name, String position, int id) {
+    protected Student(String name, String position, int id) {
         this.name = name;
         this.position = position;
         this.id = id;
